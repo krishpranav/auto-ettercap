@@ -14,3 +14,10 @@ A simple python automation for ettercap
 - cd auto-ettercap
 - sudo chmod +x *
 - python3 auto-ettercap.py
+
+# Steps To Run This Tool On Android(Termux):
+- bash install.sh
+- git clone https://github.com/krishpranav/auto-ettercap
+- cd auto-ettercap
+- sudo chmod +x *
+- python3 auto-ettercap.py
